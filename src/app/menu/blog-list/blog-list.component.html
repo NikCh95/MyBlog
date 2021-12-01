@@ -1,0 +1,41 @@
+<div>
+    <div>
+        <h1>Мой дневник</h1>
+    </div>
+
+    <form [formGroup] = "blogForm"  
+          (ngSubmit) = "onSubmit()">
+
+    <div>
+        <div class="corner-4-box">
+            <div class="corner-4-textbox">
+
+                <div class = "title">
+                    <h3><label for = "name" >Заголовок </label>
+                        <input type ="text"
+                               id ="name"
+                               formControlName = "name"
+                               class="input"></h3> 
+                </div>
+                       <div class = "dataTime">{{todaydate | date:'dd-MM-yyyy г. HH:mm '}}</div>
+
+    <img class="img" src="https://ru.wikifur.com/w/images/thumb/a/a6/Daisy_Duck_26.png/482px-Daisy_Duck_26.png">
+
+        <textarea class = "text" 
+                  type ="text"
+                  id="text"
+                  formControlName = "text"
+                  name="comment" 
+                  placeholder="Пример: Мое лето прошло просто замечательно. Вместе с родителями я ездила на море. Кстати, не помню, а ты когда-нибудь была на море?                                                       
+      Каждый день мы ходили купаться. Ты же знаешь, я совсем не умею плавать. Так вот, папа учил меня плавать. Не сказала бы, что теперь это получается у меня прекрасно, но сдвиги все же есть. Не понимаю, как ты плаваешь на спине?!"></textarea>
+                </div>
+            </div>
+    </div>
+    
+    <div><button class = "submit" 
+                 type="submit"
+                 [disabled] = "blogForm.invalid">Сохранить</button></div>
+
+    <h2><div class = "addBlog" *ngIf = isAdded> {{text1}}</div></h2>
+</form>
+</div>

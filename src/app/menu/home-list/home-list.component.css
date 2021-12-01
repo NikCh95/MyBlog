@@ -1,0 +1,71 @@
+/* мики-маус */
+.mouse {
+    position: relative;
+  }
+
+.img {
+    width: 300px;
+    height: 240px;
+    margin-top: 100px;
+    position: absolute;
+}
+
+/* диалог мики мауса */
+.img_d {
+    width: 500px;
+    height: 200px;
+    margin-left: 200px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* мышь 2 */
+.mouse2 {
+    position: absolute;
+}
+
+.img2 {
+    width: 300px;
+    height: 240px;
+    margin-top: 150px;
+    margin-left: 600px;
+    position:absolute;
+
+}
+
+.img_d2 {
+    width: 500px;
+    height: 200px;
+    margin-left: 205px;
+    float: right;
+    margin-top: 100px;
+    transform: scale(-1, 1) 
+}
+
+/* диалог микки */
+.bottom-left {
+    position: absolute;
+    margin-left: 280px;
+    margin-top: 70px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+}
+
+/* диалог минни */
+.bottom-right {
+    position: absolute;
+    margin-left: 350px;
+    margin-top: 160px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+}
+
+.bottom-left-registration {
+    cursor: pointer;
+    color: #0eb94f;
+    position: absolute;
+    margin-left: 350px;
+    margin-top: 70px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+}

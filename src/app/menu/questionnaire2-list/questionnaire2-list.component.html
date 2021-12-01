@@ -1,0 +1,34 @@
+<div class="title">
+    <h1>Анкета</h1>
+</div>
+<div class = "icon">
+    <img class = "img"  
+         (click)="clickOnTheGuf()"
+         src="https://www.pinclipart.com/picdir/big/156-1561721_photos-de-mickey-personajes-disney-pinturas-disney-dog.png">
+    <img *ngIf="click"  class="img_d" src="https://utv.ru/media/og_image/5bfe84f8701cf1675a376a8b.png">
+    <div *ngIf="click"  class="bottom-left">{{text1}}</div>
+
+     <input type="text" size="20" /> <small> Лучшая подруга(друг)</small><br />
+     <input type="text" size="20" /> <small> Любимое блюдо</small><br />
+     <input type="text" size="20" /> <small> Любимый фрукт</small><br />
+     <input type="text" size="20" /> <small> Любимое время года</small><br />
+     <input type="text" size="20" /> <small> Есть ли пирсинг/тату?</small><br />
+     <input type="text" size="20" /> <small> Цвет глаз</small><br />
+     <input type="text" size="20" /> <small> Цвет волос</small><br />
+     <input type="text" size="20" /> <small> Любимая марка авто?</small><br />
+     <input type="text" size="20" /> <small> Где вы познакомились?</small><br />
+     <input type="text" size="20" /> <small> Любимая фраза?</small><br />
+     <input type="text" size="20" /> <small> Каков девиз?</small><br />
+     <input type="text" size="20" /> <small> Знак зодиака</small><br />
+     <input type="text" size="20" /> <small> Знак гороскопа</small><br />
+     <input type="text" size="20" /> <small> Любимый цветок</small><br />
+     <input type="text" size="20" /> <small> Любимый цвет</small><br />
+     <input type="text" size="20" /> <small> Любимый актер(актриса)</small><br />
+     <input type="text" size="20" /> <small> Любимый праздник</small><br />
+     <input type="text" size="20" /> <small> Какой канал чаще всего смотрит по TV?</small><br />
+     <input type="text" size="50" /> <small> Любимая пословица</small><br />
+     <input type="text" size="60" /> <small> Почему ты решил заполнить эту анкету?</small><br />
+
+     <input class = "button" routerLink="/questionnaire" type="submit" value="<<<" />
+     <input class = "button2" type="submit" value="Сохранить" />
+</div>

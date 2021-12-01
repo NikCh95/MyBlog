@@ -1,0 +1,38 @@
+<div>
+    <img src="https://i.pinimg.com/originals/6e/d4/41/6ed4411fe43a684f68b27e97f2c5787c.jpg" class="round"
+        routerLink="/personal">
+    <div class="title">
+        <h1>Анкета</h1>
+    </div>
+    <div class="icon">
+        <input type="radio" name="Sex" value="Мужской" checked="checked" />
+        <small>Молодой человек</small><br />
+        <input type="radio" name="Sex" value="Женский" /> <small> Девушка</small><br />
+        <input type="date" name="calendar"> <small> Дата рождения</small><br />
+        <input type="text" size="20" /> <small> Фамилия</small><br />
+        <input type="text" size="20" /> <small> Имя </small><br />
+        <input type="text" size="20" /> <small> Отчество</small><br />
+        <input type="text" size="20" /> <small> Возраст</small><br />
+        <input type="text" size="20" /> <small> Никнэйм</small><br />
+        <input type="text" size="20" /> <small> Цвет глаз</small><br />
+        <input type="text" size="20" /> <small> Цвет волос</small><br />
+        <input type="text" size="20" /> <small> Цвет кожи</small><br />
+        <input type="text" size="20" /> <small> Рост</small><br />
+        <input type="text" size="20" /> <small> Вес</small><br />
+        <input type="text" size="40" /> <small> Хобби</small><br />
+        <input type="text" size="40" /> <small> Любимый фильм(мультфильм)</small><br />
+        <input type="text" size="50" /> <small> Любимая книга</small><br />
+        <input type="text" size="20" /> <small> Любимое время года</small><br />
+        <input type="text" size="50" /> <small> Любимая песня и группа</small><br />
+        <input type="text" size="50" /> <small> Кем мечтает стать?</small><br />
+        <div>
+            <img *ngIf="click" class="img_d" src="https://utv.ru/media/og_image/5bfe84f8701cf1675a376a8b.png">
+            <div *ngIf="click" class="bottom-left">{{text1}}</div>
+        </div>
+        <input type="text" size="30" /> <small> Любимый вид спорта</small><br />
+        <input type="text" size="20" /> <small> Любимое животное</small><br />
+        <input class="button" type="submit" value="Сохранить" />
+        <input class="button2" routerLink="/questionnaire2" type="submit" value=">>>" />
+    </div>
+    <img (click)="clickOnTheDog()" class="img" src="https://cdn141.picsart.com/305722539001211.png">
+</div>

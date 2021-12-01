@@ -1,0 +1,11 @@
+/* Для иконки пользователя */
+.round {
+    cursor: pointer;
+    float:right;
+    margin-right: 15px;
+    border-radius: 50px; 
+    border: 4px solid rgb(20, 145, 107); 
+    box-shadow: 0 0 7px rgb(0, 255, 170); 
+    width: 80px;
+    height: 80px;
+  }

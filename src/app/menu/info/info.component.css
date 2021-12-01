@@ -1,0 +1,22 @@
+h2 {
+    text-indent: 40px;
+    text-align: justify;
+}
+
+.text {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.text_main {
+    margin-left: 40px;
+    margin-right: 40px;
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.img {
+    margin-left: 350px;
+    width: 125px;
+    height: 150px;
+}

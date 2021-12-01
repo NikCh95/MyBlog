@@ -1,0 +1,64 @@
+<div class="container">
+        <div>
+            <h1>Регистрация</h1>
+        </div>
+
+        <div class="padding">
+            <div>
+                <img class="img" src="https://www.pinclipart.com/picdir/big/274-2748217_donald-duck-clipart.png">
+
+                <img *ngIf="isAdded" class="img_d" src="https://utv.ru/media/og_image/5bfe84f8701cf1675a376a8b.png">
+
+                <div *ngIf="isAdded" class="bottom-left">{{ textDonaldDuck }}</div>
+            </div>
+
+            <!-- <label><input type="checkbox" [formControl]="roles">{{roles.name}}</label> -->
+            <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+            <label for="userName">
+                <h2>Имя</h2>
+            </label>
+            <input type="text" id="userName" formControlName="userName" placeholder="Введите ваше имя">
+
+
+
+            <label for="email">
+                <h2>Email</h2>
+            </label>
+            <input id="email" formControlName="email" type="text" placeholder="Введите вашу почту" name="email"
+                required>
+
+            <label for="password">
+                <h2>Password</h2>
+            </label>
+            <input type="password" id="password" formControlName="password" placeholder="Введите пароль" name="password"
+                required>
+
+            <!-- <label>Role</label>
+        <div *ngFor="let roles of registrationForm.get('roles')['controls']; let i = index">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input"
+                [formControl]="roles">
+                {{roles[i].name}}
+            </label>
+        </div> -->
+
+            <div>
+                <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Запомнить меня
+            </div>
+
+            <div class="clearfix">
+
+                <button routerLink="" type="button" class="cancelbtn">Отменить</button>
+
+                <button [disabled]="registrationForm.invalid" type="submit" class="signupbtn"
+                    (click)="addClickMetod()">Регистрация</button>
+            </div>
+        </form>
+
+            <div class="clearfix">
+                <button routerLink="/authorization" type="submit" class="signupbtn2"
+                    *ngIf="addClickStatus">Авторизация</button>
+            </div>
+            <p> Если Вы зарегистрированы нажмите <a routerLink="/authorization">Авторизоваться</a></p>
+        </div>
+</div>

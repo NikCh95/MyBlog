@@ -1,0 +1,45 @@
+/* главный блок расширения экрана */
+.title-blog {
+    width: 1024px;
+    height: 780px;
+    margin-left: auto;
+    margin-right: auto;
+    background: linear-gradient(150deg, #94f1e2, #0df7d0);
+}
+
+/*блок шапки приложения */
+.hat {
+    width:auto;
+    height: 150px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-bottom: 2px solid #8E8D8A  ;
+    background: linear-gradient(150deg, #55f8dd, #116466);
+}
+
+/* блок для главного меню */
+.left-blog {
+    width:150px;
+    height: 613px;
+    float: left;
+    margin-left: 5px;
+    margin-top: 10px;
+    border-right: 2px solid #8E8D8A ;
+    background: linear-gradient(150deg, #55f8dd, #20917e);
+}
+
+/* блок для отображения информаци */
+
+.right-blog {
+    width: 850px;
+    height: 613px;
+    float: right;
+    margin-top: 10px;
+    margin-right: 5px;
+    border-left: 2px solid #8E8D8A ;
+    background: linear-gradient(150deg, #55f8dd, #20917e);
+}
+
+.border-center {
+    text-align: center;
+}

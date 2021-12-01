@@ -1,0 +1,78 @@
+/* заголовок анкеты */
+.title {
+  font-family: 'Cormorant Garamond', serif;
+  color: #243a37;
+}
+
+/* картинка собачки */
+.img {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  margin-left: 500px;
+  cursor: pointer;
+}
+
+h1 {
+  position: absolute;
+  margin-left: 550px;
+}
+
+/* для ввода данных */
+.icon {
+  margin-left: 30px;
+  font-size: 1.4em;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* цвет ввода и отступы */
+input[type=text]:focus, [name=message]:focus {
+  background-color: rgb(15, 248, 170);
+}
+
+/* иконка сохранения */
+.button {
+  cursor: pointer;
+  box-shadow: inset 0 1px 1px rgba(17, 233, 114, 0.8), inset 0 -1px 0px rgba(63, 59, 113, 0.2), 0 9px 16px 0 rgba(53, 52, 52, 0.3), 0 4px 3px 0 rgba(43, 42, 42, 0.3), 0 0 0 1px #8E8D8A;
+  background-image: linear-gradient(45deg, #f0dfd4, #30e9ca);
+}
+
+/* иконка далее */
+.button2 {
+  margin-top: 5px;
+  cursor: pointer;
+  box-shadow: inset 0 1px 1px rgba(17, 233, 114, 0.8), inset 0 -1px 0px rgba(63, 59, 113, 0.2), 0 9px 16px 0 rgba(53, 52, 52, 0.3), 0 4px 3px 0 rgba(43, 42, 42, 0.3), 0 0 0 1px #8E8D8A;
+  background-image: linear-gradient(45deg, #f0dfd4, #30e9ca);
+  margin-left: 10px;
+}
+
+/* картнка облако диалога*/
+.round {
+  margin-top: 90px;
+  margin-left: 550px;
+  cursor: pointer;
+  position: absolute;
+  border: 4px solid rgb(20, 145, 107); 
+  border-radius: 0 50% 50% 50%;
+  width: 200px;
+  height: 200px;
+}
+
+/* картинка собака */
+.img_d {
+  width: 200px;
+  height: 100px;
+  margin-left: 550px;
+  margin-top: 10px;
+  text-align: center;
+  position: absolute;
+}
+
+/* диалог собаки */
+.bottom-left {
+  position: absolute;
+  margin-left: 605px;
+  margin-top: 30px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+}

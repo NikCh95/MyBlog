@@ -1,0 +1,43 @@
+/* главный стиль заголовка */
+.header {
+    text-align: center;
+    padding-top: 30px;
+}
+
+/* для иконки картнки */
+.img {
+    width: 160px;
+    height: 100px;
+    float:left; 
+    margin-left: 20px;
+    margin-top: 25px;
+}
+  h1 {
+    margin-right: 220px;
+    color: #243a37;
+    cursor: pointer;
+  }
+
+/* стиль заголовка */
+.font {
+    
+    background-image: linear-gradient(45deg, #12d4bb, #30e9ca);
+    box-shadow: inset 0 1px 1px rgba(17, 233, 114, 0.8), inset 0 -1px 0px rgba(63, 59, 113, 0.2), 0 9px 16px 0 rgba(53, 52, 52, 0.3), 0 4px 3px 0 rgba(43, 42, 42, 0.3), 0 0 0 1px #8E8D8A;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+/*Иконки соцсетей  */
+.social a {
+    float: left;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 24px;
+    padding: 6px;
+    color: rgb(0, 0, 0);
+}
+
+.whatsapp a:hover {background: #50b154; color: #fff;}
+.instagram a:hover {background: #3f729b; color: #fff;}
+.telegram a:hover {background: #249bd7; color: #fff;}
+.vk a:hover {background: #5d84ae; color: #fff;}

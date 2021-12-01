@@ -1,0 +1,25 @@
+<div>
+    <div *ngIf="!loggedIn()">
+        <div class="mouse">
+            <div class="bottom-left">{{text1}}</div>
+            <div class="bottom-left-registration"
+                 routerLink="/registration">{{text3}}</div>
+            <img class="img"
+                 src="https://catherineasquithgallery.com/uploads/posts/2021-03/1614598558_9-p-maus-na-belom-fone-10.png">
+            <img class="img_d"
+                 src="https://utv.ru/media/og_image/5bfe84f8701cf1675a376a8b.png">
+        </div>
+
+        <div class="mouse2">
+            <div class="bottom-right">{{text2}}</div>
+            <img class="img_d2" 
+                 src="https://utv.ru/media/og_image/5bfe84f8701cf1675a376a8b.png">
+            <img class="img2"
+                src="https://catherineasquithgallery.com/uploads/posts/2021-03/1614583036_14-p-kartinki-iz-multikov-na-belom-fone-18.png">
+        </div>
+    </div>
+
+    <div *ngIf="loggedIn()">
+        Нужно будет придумать, что должно находиться на этой странице!
+    </div>
+</div>

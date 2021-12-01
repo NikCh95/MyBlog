@@ -1,0 +1,72 @@
+/* Отступы иконок */
+.icon {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4em;
+    margin-left: 30px;
+    margin-top: 20px;
+
+  }
+
+  /* цвет и отступы внутри иконок */
+input[type=text]:focus, [name=message]:focus {
+    background-color: rgb(15, 248, 170);
+  }
+
+/* иконка сохранения */
+.button {
+    margin-top: 5px;
+    cursor: pointer;
+    box-shadow: inset 0 1px 1px rgba(17, 233, 114, 0.8), inset 0 -1px 0px rgba(63, 59, 113, 0.2), 0 9px 16px 0 rgba(53, 52, 52, 0.3), 0 4px 3px 0 rgba(43, 42, 42, 0.3), 0 0 0 1px #8E8D8A;
+    background-image: linear-gradient(45deg, #f0dfd4, #30e9ca);
+  }
+  
+  .button2 {
+    margin-top: 5px;
+    cursor: pointer;
+    box-shadow: inset 0 1px 1px rgba(17, 233, 114, 0.8), inset 0 -1px 0px rgba(63, 59, 113, 0.2), 0 9px 16px 0 rgba(53, 52, 52, 0.3), 0 4px 3px 0 rgba(43, 42, 42, 0.3), 0 0 0 1px #8E8D8A;
+    background-image: linear-gradient(45deg, #f0dfd4, #30e9ca);
+    margin-left: 10px;
+  }
+
+/* картинка guf */
+.img {
+    width: 300px;
+    height: 280px;
+    position: absolute;
+    padding-top: 200px;
+    margin-left: 460px;
+    cursor: pointer;
+  }
+
+  /* Заголовок  */
+.title {
+    font-family: 'Cormorant Garamond', serif;
+    color: #243a37;
+  }
+
+h1 {
+  position: absolute;
+  margin-left: 580px;
+}
+
+
+/*облако диалога Guf*/
+.img_d {
+  position: absolute;
+  width: 400px;
+  height: 150px;
+  margin-left: 300px;
+  margin-top: 100px;
+  text-align: center;
+  transform: scale(-1, 1) ;
+}
+
+/* текст диалога */
+.bottom-left {
+  color: #187a1d;
+  position: absolute;
+  margin-left: 430px;
+  margin-top: 135px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+}

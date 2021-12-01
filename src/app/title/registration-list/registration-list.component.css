@@ -1,0 +1,128 @@
+/* Поля ввода полной ширины */
+input[type=text], input[type=password] {
+    width: 30%;
+    padding: 10px;
+    margin: 5px 0 5px 0;
+    background: #a3eedb;
+    font-size: 15px;
+  }
+
+/* размер поля email  */
+input[name=email] {
+    width: 60%;
+  }
+
+
+/* размер поля password  */
+input[name=password] {
+  width: 60%;
+}
+  
+/* цвет поля когда на нем курсир */
+input[type=text]:focus, input[type=password]:focus {
+    /* background-color: rgb(12, 131, 111); */
+    outline: none;
+  }
+  
+  /* кнопка отмена*/
+  button {
+    border: 1px solid rgba(170, 14, 218, 0.5);
+    background-color: #a7e6a9;
+    color: rgb(13, 5, 51);
+    padding: 10px 10px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+  }
+  
+  button:hover {
+    opacity:1;
+  }
+  
+  /* Поплавок отмена и кнопки регистрации и добавить равную ширину */
+.cancelbtn {
+    float: left;
+    width: 48%;
+    font-size: 19px;
+    font-family: 'Cormorant Garamond', serif;
+    box-shadow: inset 0 1px 1px rgba(17, 233, 114, 0.8), 
+                inset 0 -1px 0px rgba(63, 59, 113, 0.2),
+                      0 9px 16px 0 rgba(53, 52, 52, 0.3), 
+                      0 4px 3px 0 rgba(43, 42, 42, 0.3),
+                      0 0 0 1px #8E8D8A;
+    background-image: linear-gradient(45deg, #f18875, #eb4e4e);
+  }
+  
+  /* Кнопка авторизации */
+.signupbtn {
+    float: left;
+    width: 48%;
+    font-size: 19px;
+    font-family: 'Cormorant Garamond', serif;
+    box-shadow: inset 0 1px 1px rgba(17, 233, 114, 0.8), inset 0 -1px 0px rgba(#243a37), 0 9px 16px 0 rgba(#243a37), 0 4px 3px 0 rgba(#243a37), 0 0 0 1px #8E8D8A;
+    background-image: linear-gradient(45deg, #07da66, #0a9c53);
+  }
+
+  /* Кнопка авторизации после клика */
+.signupbtn2 {
+    float: left;
+    width: 96%;
+    font-size: 18px;
+    font-family: 'Cormorant Garamond', serif;
+    box-shadow: inset 0 1px 1px rgba(17, 233, 114, 0.8), inset 0 -1px 0px rgba(63, 59, 113, 0.2), 0 9px 16px 0 rgba(53, 52, 52, 0.3), 0 4px 3px 0 rgba(43, 42, 42, 0.3), 0 0 0 1px #8E8D8A;
+    background-image: linear-gradient(45deg, #07da66, #0a9c53);
+  }
+  
+h1 {
+    padding-left: 320px;
+    font-family: 'Cormorant Garamond', serif;
+    position: absolute;
+    text-align: center;
+    color: #243a37;
+  }
+
+h2 {
+    font-family: 'Cormorant Garamond', serif;
+    color: #243a37;
+  }
+
+  /* отступ всего блока регистрации */
+.padding {
+  padding-top: 60px;
+}
+  
+
+/* общая настройка всего поля */
+.container {
+    margin-left: 30px;
+}
+
+/* для картинки Дональд Дак */
+.img {
+    margin-left: 530px;
+    margin-top: 25px;
+    width: 250px;
+    height: 350px;
+    position: absolute;
+}
+
+/* текст диалога Дональд Дак */
+.bottom-left {
+  color: #187a1d;
+  position: absolute;
+  margin-left: 280px;
+  margin-top: 40px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+}
+
+/* диалог облако Дональд Дак */
+.img_d {
+  position: absolute;
+  width: 400px;
+  height: 150px;
+  margin-left: 250px;
+  transform: scale(-1, 1) 
+}

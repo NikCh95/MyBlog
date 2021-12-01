@@ -1,0 +1,61 @@
+<div class="container">
+    <div>
+        <h1>Авторизация</h1>
+    </div>
+
+    <form [formGroup] = "loginForm" (ngSubmit) = "onSubmit()">
+        
+            <img (click)="addClickMetod()" 
+                 class="img"
+                 src="https://clipart-best.com/img/mickey-mouse/mickey-mouse-clip-art-29.png">
+
+            <img *ngIf="addClickStatus"
+                  class="img_d"
+                  src="https://utv.ru/media/og_image/5bfe84f8701cf1675a376a8b.png">
+
+            <div *ngIf="addClickStatus" class="bottom-left">{{text1}}</div>
+            <div *ngIf="addClickStatus" routerLink="/title-menu-list" class="bottom-left2">{{text2}}</div>
+        
+
+            <label for="Email"> <h2>Email</h2></label>
+            <input type="text" 
+                   formControlName="email"
+                   placeholder="Введите вашу почту"
+                   id="email">
+            <!-- <div *ngIf="loginForm.get('email') && loginForm.get('email')">
+                <div *ngIf="loginForm.get('email')">
+                   Требуется имя пользователя
+                  </div>
+            </div> -->
+    
+    
+            <label for="password"><h2>Password</h2></label>
+            <input type="password" 
+                   id="password"
+                   formControlName = "password"
+                   placeholder="Введите пароль">
+
+    <div>
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Запомнить меня
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="clearfix">
+
+        <button type="submit"
+                [disabled] = "loginForm.invalid"
+                class="signupbtn2">Авторизация</button>
+
+     <div class="error" *ngIf="submitted && isLoginFailed">
+                   Авторизация не удалась! {{ errorMessage }} </div>
+    </div>
+   </form>
+    <p> Если Вы зарегистрированы нажмите <a routerLink="/registration">Зарегистрироваться</a></p>
+</div>
