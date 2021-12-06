@@ -9,6 +9,8 @@ import { ConfigService } from 'src/app/service/config.service';
 })
 export class AvatarListComponent implements OnInit {
 
+  photo: String  = "https://yt3.ggpht.com/a/AGF-l7_JXyCvAxDrmmgeuk9PLydQNCLAlf5Mc709Iw=s900-c-k-c0xffffffff-no-rj-mo";
+
     constructor(private authService: ConfigService) { }
 
   ngOnInit(): void {}

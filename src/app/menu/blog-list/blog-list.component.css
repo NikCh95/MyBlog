@@ -49,7 +49,7 @@ h1 {
 .dataTime {
     font-size: 25px;
     margin-left: 480px;
-    margin-top: -20px;
+    margin-top: -23px;
     position: absolute;
 
 }
@@ -63,6 +63,7 @@ h1 {
     font-style: italic;
     color: rgb(121, 109, 3);
     display: inline-block;
+    font-size: 20px;
     /* background: linear-gradient(150deg, #55f8dd, #52e0c9); */
 }
 

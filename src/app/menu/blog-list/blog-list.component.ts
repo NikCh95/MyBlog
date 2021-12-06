@@ -19,11 +19,10 @@ export class BlogListComponent implements OnInit {
 
 
   text1: String = "Запись успешно сохранена!";
-  blog: BlogModel = new BlogModel;
+  blog: BlogModel = new BlogModel();
   isAdded = false;
-  datePipe: any;
 
-  constructor(private blogService: BlogService, private myservice: DataAndTimeService) { 
+  constructor(private blogService: BlogService, private datePipe: DatePipe,  private myservice: DataAndTimeService) { 
     this.isAvatar = myservice.isAuthorisation$;
   }
   currentDate = new Date();
@@ -38,15 +37,15 @@ export class BlogListComponent implements OnInit {
     this.blogForm = new FormGroup({
       name: new FormControl(),
       text: new FormControl(),
-      // date: new FormControl(this.datePipe.transform(this.currentDate, 'dd-MM-yyyy'))
+      data: new FormControl(this.datePipe.transform(this.currentDate, 'dd-MM-yyyy'))
     });
-    this.todaydate = this.myservice.showTodayDate();
+    // this.todaydate = this.myservice.showTodayDate();
   }
 
   onSubmit() {
     this.blog.name = this.blogForm.value.name;
     this.blog.text = this.blogForm.value.text;
-    // this.blog.data = this.blogForm.value.data;
+    this.blog.data = this.blogForm.value.data;
     this.save();
   }
 
@@ -59,5 +58,4 @@ export class BlogListComponent implements OnInit {
   reserBlogForm() {
     this.blogForm.reset();
   }
-
 }

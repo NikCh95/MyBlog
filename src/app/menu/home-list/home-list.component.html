@@ -19,7 +19,20 @@
         </div>
     </div>
 
-    <div *ngIf="loggedIn()">
-        Нужно будет придумать, что должно находиться на этой странице!
+    <div *ngIf="loggedIn()" class="home">
+       <!-- <thead>
+           <tr>
+               <th>Заголовок</th>
+               <th>Текст</th>
+               <th>Дата публикации</th>
+           </tr>
+       </thead>
+       <tbody>
+           <tr *ngFor="let user of users">
+               <td>{{name}}</td>
+               <td>{{text}}</td>
+               <td>{{data}}</td>
+           </tr>
+       </tbody> -->
     </div>
 </div>

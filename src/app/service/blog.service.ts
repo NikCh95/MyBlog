@@ -1,6 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 import { BlogModel } from '../classModel/blog-model';
 
 @Injectable({
@@ -8,7 +9,7 @@ import { BlogModel } from '../classModel/blog-model';
 })
 export class BlogService {
 
-  private baseUrl = 'http://localhost:8080/blog';
+  private baseUrl = 'http://localhost:9999/blog';
 
   constructor(private http: HttpClient) { }
 
@@ -17,18 +18,33 @@ export class BlogService {
   }
 
   deleteBlog(id: number) : Observable<{}> {
-    return this.http.delete(`${this.baseUrl}/${id}`);
+    return this.http.delete(`${this.baseUrl}/${id}`)
+    .pipe(catchError(this.handleError));
   }
 
   updateBlog(blog: BlogModel){
-    return this.http.put(`${this.baseUrl}/upDateBlog`, blog);
+    return this.http.put(`${this.baseUrl}/updateblog`, blog)
+    .pipe(catchError(this.handleError));;
   }
 
   getAllBlogs(){
-    return this.http.get<BlogModel[]>(this.baseUrl);
+    return this.http.get<BlogModel[]>(this.baseUrl)
+    .pipe(catchError(this.handleError));;
   }
 
   getUserById(id: number){
-    return this.http.get<BlogModel>(`${this.baseUrl}/${id}`);
+    return this.http.get<BlogModel>(`${this.baseUrl}/${id}`)
+    .pipe(catchError(this.handleError));;
+  }
+
+  private handleError(httpError: HttpErrorResponse) {
+    if (httpError.error instanceof ErrorEvent) {
+      console.error('An error occurred:', httpError.error.message);
+    } else {
+      console.error(
+        `Backend returned code ${httpError.status}, ` +
+        `body was: ${httpError.error}`);
+    }
+    return throwError('Something bad happened; please try again later.');
   }
 }

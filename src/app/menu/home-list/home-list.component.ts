@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { DatePipe } from '@angular/common';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { BlogModel } from 'src/app/classModel/blog-model';
+import { BlogService } from 'src/app/service/blog.service';
 import { ConfigService } from 'src/app/service/config.service';
 
 @Component({
@@ -7,6 +11,21 @@ import { ConfigService } from 'src/app/service/config.service';
   styleUrls: ['./home-list.component.css']
 })
 export class HomeListComponent implements OnInit {
+ 
+  users!: BlogModel[];
+  user!:BlogModel;
+  deleteMsg:string = "";
+  
+  constructor(private blogService: BlogService, private datePiple: DatePipe, private authService: ConfigService) { }
+
+
+  onLogOut() {
+    this.authService.logout();
+  }
+
+  loggedIn() {
+    return this.authService.isLoggedIn();
+  }
 
   text1: string = "Привет, дорогой друг!"
   text2: string = "...................!";
@@ -39,6 +58,15 @@ export class HomeListComponent implements OnInit {
   replacement23: string = "Регистрация";
 
   ngOnInit(): void {
+    console.log('Блог');
+    this.blogService.getAllBlogs().subscribe(data =>{
+      console.log(data);
+      this.users = data;
+    });
+
+
+
+
     setTimeout(() => {
       this.text1 = this.replacement;
     }, 5000)
@@ -140,16 +168,50 @@ export class HomeListComponent implements OnInit {
     }, 74000)
   }
 
-
-  constructor(private authService: ConfigService) { }
-
-
-  onLogOut() {
-    this.authService.logout();
+  onClickDelete(id: number){
+    this.blogService.deleteBlog(id)
+    .subscribe(responseData=> {
+        this.deleteMsg = 'Успешно удалено!';
+        this.blogService.getAllBlogs().subscribe(data =>{  
+          console.log(data);
+          this.users = data;  
+      })  
+    }, error=>{
+        this.deleteMsg = error
+    });
   }
 
-  loggedIn() {
-    return this.authService.isLoggedIn();
+  blogForm = new FormGroup({
+    id: new FormControl({value:'', disabled:true}),
+    name: new FormControl('', [Validators.required, Validators.minLength(5)]),
+    text: new FormControl('', [Validators.required, Validators.minLength(3)]),     
+    data: new FormControl('')
+  });
+
+  onClickUpdate(userId: number){
+    this.blogService.getUserById(userId)
+    .subscribe(responseData=> {
+      this.user = responseData;
+      console.log(this.user);
+      this.prepareUpdateForm();
+    });
   }
 
+  prepareUpdateForm(){
+    this.blogForm.setValue({
+      id:this.user.id,
+      firstName:this.user.name,
+      lastName:this.user.text,
+      data:this.datePiple.transform(this.user.data, 'yyyy-MM-dd')
+    });
+  }
+
+  onSubmit(){
+      let user = new BlogModel();
+      // To get data from a disabled input element
+      user.id = this.blogForm.getRawValue().id;
+      user.name = this.blogForm.value.name;
+      user.text = this.blogForm.value.text;
+      user.data = this.blogForm.value.data;
+  }
 }

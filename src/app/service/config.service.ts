@@ -11,8 +11,8 @@ const headers = new HttpHeaders().set('Content-Type', 'application/json');
 })
 export class ConfigService {
 
-  private baseUrl = 'http://localhost:8080/auth/';
-  private baseUrlUser = 'http://localhost:8080/user';
+  private baseUrl = 'http://localhost:9999/auth/';
+  private baseUrlUser = 'http://localhost:9999/user';
 
   constructor(private http: HttpClient, private router: Router) { }
 
