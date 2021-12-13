@@ -5,14 +5,20 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { UserModel } from '../classModel/user-model';
 
+/**
+ * Класс для регистрации и авторизации пользователя! Основные методы GET and PUT
+ * @author Н.Черненко
+ */
+
 const headers = new HttpHeaders().set('Content-Type', 'application/json');
 @Injectable({
   providedIn: 'root'
 })
 export class ConfigService {
-
-  private baseUrl = 'http://localhost:9999/auth/';
-  private baseUrlUser = 'http://localhost:9999/user';
+  
+// http UserController and AuthController
+  private baseUrl = 'http://localhost:8080/auth/';
+  private baseUrlUser = 'http://localhost:8080/user/';
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -22,10 +28,39 @@ export class ConfigService {
    * @returns 
    */
   registration(user: UserModel): Observable<any> {
-    
     return this.http.post(this.baseUrl + 'registration', user, { headers, responseType: 'text' })
       .pipe(catchError(this.handleError));
   }
+
+  /**
+   * Найти всех пользователей
+   * @returns 
+   */
+  getAllUsers(): Observable<any> {
+    return this.http.get(this.baseUrlUser+'allusers', {responseType:'text'})
+                                     .pipe(catchError(this.handleError))
+  }
+
+  /**
+   * 
+   * @param id Найти пользователя по id
+   * @returns 
+   */
+  getUserById(id: number){
+    return this.http.get<UserModel>(`${this.baseUrlUser}/${id}`)
+                      .pipe(catchError(this.handleError));
+  }
+
+  /**
+   * Изменение данных пользователя
+   * @param user 
+   * @returns 
+   */
+  upDateUser(user: UserModel) {
+     return this.http.put(`${this.baseUrlUser}/updateuser`, user)
+    .pipe(catchError(this.handleError));
+  }
+
 
   /**
    * Авторизация пользователя
@@ -48,15 +83,27 @@ export class ConfigService {
       );
   }
 
+  /**
+   * Выйти после авторизации пользователя
+   */
   logout() {
     sessionStorage.clear()
     this.router.navigate(['/authorization']);
   }
 
+  /**
+   * Появление или скрытие компонента после регистрации.
+   * @returns 
+   */
   isLoggedIn(): boolean {
     return sessionStorage.getItem('email') !== null;
   }
 
+  /**
+   * Метод логирования ошибок при выполнении методов данного класса
+   * @param httpError 
+   * @returns 
+   */
   private handleError(httpError: HttpErrorResponse) {
     let message: string = '';
 

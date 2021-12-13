@@ -1,6 +1,7 @@
 import { Component, NgModule } from "@angular/core";
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from "./app.component";
+import { ArchiveComponent } from "./archive/blogArhive/archive.component";
 import { BlogListComponent } from "./menu/blog-list/blog-list.component";
 import { HomeListComponent } from "./menu/home-list/home-list.component";
 import { InfoComponent } from "./menu/info/info.component";
@@ -22,6 +23,7 @@ const appRoutes:Routes = [
     {path: 'blog-list', component: BlogListComponent },
     {path: 'secrets-list', component: SecretsListComponent },
     {path: 'info', component: InfoComponent },
+    {path: 'archive', component: ArchiveComponent },
   ];
 
 @NgModule ({

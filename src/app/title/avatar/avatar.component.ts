@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ConfigService } from 'src/app/service/config.service';
 
+/**
+ * Класс иконки-аватарка
+ * @author Н.Черненко
+ */
+
 @Component({
   selector: 'app-avatar',
   templateUrl: './avatar.component.html',

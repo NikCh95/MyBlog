@@ -5,7 +5,7 @@
 
 .img {
     width: 300px;
-    height: 240px;
+    height: 220px;
     margin-top: 100px;
     position: absolute;
 }
@@ -69,7 +69,124 @@
     font-family: 'Cormorant Garamond', serif;
     font-size: 30px;
 }
-
+/* ----------------------------------------------------------------------------------------------- */
 
 /* Лист после авторизации пользователя */
+/* Оформление панели */
+#side-checkbox {
+    display: none;
+}
+.side-panel {
+    position: fixed;
+    z-index: 999999;
+    top: 0;
+    left: -360px;
+    background: linear-gradient(150deg, #55f8dd, #20917e);
+    transition: all 0.5s;   
+    width: 278px;
+    height: 100vh;
+    box-shadow: 10px 0 20px rgba(0,0,0,0.4);
+    color: #FFF;
+    padding: 40px 20px;
+}
+.side-title {
+    font-size: 40px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #243a37;
+    border-bottom: 2px solid #5153551a;
+    font-family: 'Cormorant Garamond', serif;
+}
+/* Оформление кнопки на странице */
+.side-button-1-wr {
+    text-align: right; /* Контейнер для кнопки, чтобы было удобнее ее разместить */
+}
+.side-button-1 .side-b {
+    text-decoration: none;
+    position: relative;
+    font-size: 30px;
+    margin-top: 10px;
+    line-height: 20px;
+    padding: 12px 30px;
+    font-weight: bold;
+    text-transform: uppercase; 
+    border-bottom: 2px solid #5153551a;
+    border-top: 2px solid #5153551a;
+    font-family: 'Cormorant Garamond', serif;
+    cursor: pointer; 
+}
 
+/* Переключатели кнопки 1 */
+.side-button-1 .side-close {
+    display: none;
+}
+#side-checkbox:checked + .side-panel + .side-button-1-wr .side-button-1 .side-open {
+    display: none;
+}
+#side-checkbox:checked + .side-panel + .side-button-1-wr .side-button-1 .side-close {
+    display: block;
+}
+#side-checkbox:checked + .side-panel {
+    left: 0;
+}
+/* Оформление кнопки на панеле */
+.side-button-2 {
+    font-size: 30px;
+    position: absolute;
+    z-index: 1;
+    top: 8px;
+    right: 8px;
+    cursor: pointer;
+    transform: rotate(45deg);  
+    transition: all 280ms ease-in-out;    
+}
+
+/* Кнопки главного меню */
+.text-block {
+    padding-left: 30px;
+    margin-left:10px;
+    margin-top:30px;
+}
+
+ /** Цвет, форма, выравнивание кнопок гланого меню*/
+ a.buttons {
+    width: 200px;
+    height: 30px;
+    text-decoration: none;
+    padding-top: 9px;
+    color: #243a37;
+    text-align: center;
+    line-height: 20px;
+    display: block;
+  }
+  
+  a.buttons:not(.active) {
+    border-radius: 10px;
+    box-shadow: inset 0 1px 1px rgba(17, 233, 114, 0.8), inset 0 -1px 0px rgba(63, 59, 113, 0.2), 0 9px 16px 0 rgba(53, 52, 52, 0.3), 0 4px 3px 0 rgba(43, 42, 42, 0.3), 0 0 0 1px #8E8D8A;
+    background-image: linear-gradient(45deg, #f0dfd4, #30e9ca);
+  }
+  
+  a.buttons:not(.active):hover,
+  a.buttons:not(.active):focus {
+    transition: color 200ms linear, text-shadow 500ms linear;
+    color: rgb(3, 136, 141);
+    text-shadow: 0 0 21px rgba(223, 206, 228, 0.5), 0 0 10px rgba(223, 206, 228, 0.4), 0 0 2px #8E8D8A;
+  }
+  a.buttons:not(:hover) {
+      transition: 0.2s;
+  }
+
+  .imgArhive {
+    padding-left: 40px;
+    padding-top: 30px;
+    width: 200px;
+    height: 150px;
+    position: absolute;
+  }
+
+
+  
+
+ 

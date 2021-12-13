@@ -2,6 +2,7 @@ h1 {
     text-align: center;
     font-family: 'Cormorant Garamond', serif;
     color: #243a37;
+    text-decoration: underline;
 }
 
 .text {
@@ -51,6 +52,8 @@ h1 {
     margin-left: 480px;
     margin-top: -23px;
     position: absolute;
+    text-align: center;
+    
 
 }
 
@@ -69,13 +72,15 @@ h1 {
 
 .addBlog {
     position: absolute;
-    margin-left: 150px;
+    padding-left:620px ;
+    padding-top: 15px;
+    color: rgb(1, 100, 26);
 }
 
 .corner-4-box {
     /* display:inline-block; */
     position: relative;
-    width: 725px; 
+    width: 720px; 
     height: 390px;
     margin: 30px;
     padding: 30px;

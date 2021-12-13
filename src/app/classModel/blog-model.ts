@@ -1,3 +1,7 @@
+/**
+ * Класс сущности (Blog)
+ */
+
 export class BlogModel {
 
     id: number | undefined;

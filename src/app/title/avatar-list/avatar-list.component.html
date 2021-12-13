@@ -2,8 +2,12 @@
     <div>
         <h1>Профиль</h1>
     </div>
-    <img src="{{photo}}" class="round" routerLink="/app-avatar-list">                                       
+    <img src="{{photo}}" class="round" routerLink="/app-avatar-list">  
     
+    <div *ngFor="let user of users">
+    <div>
+        <h2>{{user.id}}</h2>
+    </div> 
     <div>
         <h2>Фамилия</h2>
         <input type="text" required>
@@ -21,6 +25,11 @@
         <input type="text"  *ngIf="loggedIn()" value="{{ getUserEmail() }}">
     </div>
     <div>
+        <input class="button2" type="submit" value="Изменить данные">
+    </div>
+    <div>
         <input (click)="onLogOut()" *ngIf="loggedIn()" routerLink="logout" class="button" type="submit" value="Выйти">
     </div>
+  </div>
+
 </div>

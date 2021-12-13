@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DatePipe } from '@angular/common';
 import { InfoComponent } from './menu/info/info.component';
+import { ArchiveComponent } from './archive/blogArhive/archive.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { InfoComponent } from './menu/info/info.component';
     AvatarListComponent,
     BlogListComponent,
     SecretsListComponent,
-    InfoComponent
+    InfoComponent,
+    ArchiveComponent
   ],
   imports: [
     BrowserModule,

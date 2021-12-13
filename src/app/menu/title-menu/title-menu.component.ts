@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ConfigService } from 'src/app/service/config.service';
 
+/**
+ * Класс иконок главного меню
+ * @author Н.Черненко
+ */
+
 @Component({
   selector: 'app-title-menu',
   templateUrl: './title-menu.component.html',

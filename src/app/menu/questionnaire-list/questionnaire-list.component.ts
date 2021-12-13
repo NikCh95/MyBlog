@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
+/**
+ * Класс анкета (лист_1)
+ * @author Н.Черненко
+ */
+
 @Component({
   selector: 'app-questionnaire-list',
   templateUrl: './questionnaire-list.component.html',
@@ -12,6 +17,9 @@ export class QuestionnaireListComponent implements OnInit {
 
   constructor() { }
 
+  /**
+   * Метод для ловли события по клику
+   */
   clickOnTheDog() {
     this.click = true;
   }

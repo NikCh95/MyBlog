@@ -17,22 +17,39 @@
             <img class="img2"
                 src="https://catherineasquithgallery.com/uploads/posts/2021-03/1614583036_14-p-kartinki-iz-multikov-na-belom-fone-18.png">
         </div>
-    </div>
-
-    <div *ngIf="loggedIn()" class="home">
-       <!-- <thead>
-           <tr>
-               <th>Заголовок</th>
-               <th>Текст</th>
-               <th>Дата публикации</th>
-           </tr>
-       </thead>
-       <tbody>
-           <tr *ngFor="let user of users">
-               <td>{{name}}</td>
-               <td>{{text}}</td>
-               <td>{{data}}</td>
-           </tr>
-       </tbody> -->
-    </div>
+        </div>
+        
+        <div>
+            <input type="checkbox" id="side-checkbox" />
+            <div class="side-panel">
+                <label class="side-button-2" for="side-checkbox">+</label>
+                <div class="side-title">Главное меню</div>
+        
+                <div class="text-block">
+                    <a class="buttons" routerLink="/authorization" *ngIf="loggedIn()"> Мои друзья &#10086;</a>
+                </div>
+        
+                <div class="text-block">
+                    <a class="buttons" routerLink="/archive" *ngIf="loggedIn()">Архив статей &#9993;</a>
+                </div>
+        
+                <div class="text-block">
+                    <a class="buttons" routerLink="/dream" *ngIf="loggedIn()">Архив анкет &#9745;</a>
+                </div>
+                <div class="text-block">
+                    <a class="buttons" routerLink="/dream" *ngIf="loggedIn()"> Выполненные цели &#9873;</a>
+                </div>
+                <img src="https://cdn.pixabay.com/photo/2013/07/13/10/52/file-157955_1280.png" class="imgArhive">
+            </div>
+            <td>
+            <div class="side-button-1-wr">
+                <label class="side-button-1" for="side-checkbox" *ngIf="loggedIn()">
+                    <div class="side-b side-open">Архив &#9776;</div>
+                </label>
+            </div></td>
+        
+        </div>
+        
+        <!-- Фотоальбом -->
+        
 </div>

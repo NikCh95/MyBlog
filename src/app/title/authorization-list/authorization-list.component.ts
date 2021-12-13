@@ -3,6 +3,11 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ConfigService } from 'src/app/service/config.service';
 
+/**
+ * Класс авторизации пользователя 
+ * @author Н.Черненко
+ */
+
 @Component({
   selector: 'app-authorization-list',
   templateUrl: './authorization-list.component.html',
@@ -17,13 +22,12 @@ export class AuthorizationListComponent implements OnInit {
   isLoggedin = false;
   isLoginFailed = false;
 
-  constructor(private loginService: ConfigService, private router: Router) { }
-
   // Атрибуты для наблюдения событий
   text1: string = "Ничего, бывает!"
   text2: string | undefined;
-
   addClickStatus = false;
+
+  constructor(private loginService: ConfigService, private router: Router) { }
 
   addClickMetod() {
     this.addClickStatus = true;

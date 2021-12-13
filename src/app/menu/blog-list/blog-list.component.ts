@@ -1,10 +1,17 @@
 import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { BlogModel } from 'src/app/classModel/blog-model';
 import { BlogService } from 'src/app/service/blog.service';
+import { ConfigService } from 'src/app/service/config.service';
 import { DataAndTimeService } from 'src/app/service/data-and-time.service';
+
+/**
+ * Класс сохранения записей пользователя 
+ * @author Н.Черненко
+ */
 
 @Component({
   selector: 'app-blog-list',
@@ -14,24 +21,21 @@ import { DataAndTimeService } from 'src/app/service/data-and-time.service';
 })
 export class BlogListComponent implements OnInit {
 
+  currentDate = new Date();
+  blogForm!: FormGroup;
   todaydate: Date | undefined;
   isAvatar: BehaviorSubject<boolean>;
-
-
   text1: String = "Запись успешно сохранена!";
   blog: BlogModel = new BlogModel();
   isAdded = false;
 
-  constructor(private blogService: BlogService, private datePipe: DatePipe,  private myservice: DataAndTimeService) { 
+  constructor(private blogService: BlogService, private datePipe: DatePipe,  private myservice: DataAndTimeService, private authService: ConfigService) { 
     this.isAvatar = myservice.isAuthorisation$;
   }
-  currentDate = new Date();
-  blogForm!: FormGroup;
 
   ngOnInit(): void {
     if (this.isAdded == true) {
       setTimeout(() => {
-        this.text1 = " ";
       }, 3000)
     }
     this.blogForm = new FormGroup({
@@ -39,7 +43,6 @@ export class BlogListComponent implements OnInit {
       text: new FormControl(),
       data: new FormControl(this.datePipe.transform(this.currentDate, 'dd-MM-yyyy'))
     });
-    // this.todaydate = this.myservice.showTodayDate();
   }
 
   onSubmit() {
@@ -57,5 +60,9 @@ export class BlogListComponent implements OnInit {
 
   reserBlogForm() {
     this.blogForm.reset();
+  }
+
+  loggedIn() {
+    return this.authService.isLoggedIn();
   }
 }

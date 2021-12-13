@@ -1,6 +1,6 @@
 <div>
   <div>
-    <img src="https://ds05.infourok.ru/uploads/ex/0f95/001335ec-59bb466a/hello_html_m25616f05.png" class="img">
+    <img src="https://catherineasquithgallery.com/uploads/posts/2021-02/1612673243_19-p-zelenii-razdelitel-prozrachnii-fon-36.png" class="img">
   </div>
   <div class="header">
     <app-avatar></app-avatar>
@@ -19,7 +19,8 @@
           <a href="#" target="_blank"><i class="fa fa-vk fa-2x"></i></a>    
       </div>
       </div>
-      <h1 routerLink="/authorization" style="font-size: 40px"> Мy Stories Blog</h1>
+      <h1 routerLink="/authorization" style="font-size: 40px" *ngIf="! loggedIn()"> Мy Stories Blog</h1>
+      <h1 class="area" style="font-size: 40px" *ngIf=" loggedIn()"> Мy Stories Blog</h1>
     </div>
   </div>
 </div>

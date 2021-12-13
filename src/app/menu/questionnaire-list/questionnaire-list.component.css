@@ -16,6 +16,7 @@
 h1 {
   position: absolute;
   margin-left: 550px;
+  text-decoration: underline;
 }
 
 /* для ввода данных */

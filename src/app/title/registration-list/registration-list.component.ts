@@ -1,9 +1,12 @@
-import { Element } from '@angular/compiler';
-import { elementEventFullName } from '@angular/compiler/src/view_compiler/view_compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserModel } from 'src/app/classModel/user-model';
 import { ConfigService } from 'src/app/service/config.service';
+
+/**
+ * Класс регистрации пользователя
+ * @author Н.Черненко
+ */
 
 @Component({
   selector: 'app-registration-list',
@@ -13,7 +16,7 @@ import { ConfigService } from 'src/app/service/config.service';
 export class RegistrationListComponent implements OnInit {
 
   // Для сущности user
-  user = new UserModel(' ', ' ', ' ', []);
+  user = new UserModel();
   registrationForm!: FormGroup;
   isRegistred = false;
   submitted = false;
@@ -25,14 +28,9 @@ export class RegistrationListComponent implements OnInit {
 ]
   selectedRoles!: string[];
  
-
   // Для настройки событий
   addClickStatus = false;
   textDonaldDuck: String = "Ура!Успешная регистрация!"
-
-  addClickMetod() {
-    this.addClickStatus = true;
-  }
 
   // Настройка сохранения пользователя
   constructor(private userService: ConfigService) { }
@@ -55,11 +53,12 @@ export class RegistrationListComponent implements OnInit {
   }
 
   onSubmit() {
+     let user = new UserModel();
     this.submitted = true;
-    this.user.userName = this.registrationForm!.value.userName;
-    this.user.password = this.registrationForm!.value.password;
-    this.user.email = this.registrationForm!.value.email;
-    this.user.roles = this.getSelectedRoles();
+    user.userName = this.registrationForm!.value.userName;
+    user.password = this.registrationForm!.value.password;
+    user.email = this.registrationForm!.value.email;
+    user.roles = this.getSelectedRoles();
     this.save();
   }
 
@@ -92,5 +91,10 @@ export class RegistrationListComponent implements OnInit {
     this.isAdded = false;
     this.registrationForm?.reset();
   }
+
+  addClickMetod() {
+    this.addClickStatus = true;
+  }
+
 }
 

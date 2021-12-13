@@ -1,0 +1,22 @@
+<div class="title">
+    <h1>Архив записей</h1>
+    <form [formGroup]="blogUpdateForm" (ngSubmit)="onSubmit()">
+        <table>
+            <div class="box13" *ngFor="let blog of blogs">
+                <img src="https://clipart-best.com/img/pin/pin-clip-art-43.png" class="clip">
+                <tbody>
+                    <tr>
+                        <td class="name">{{ blog.name }}</td>
+                        <td class="id">№{{ blog.id }}</td>
+                        <label class="createBlog">&#10004;</label>
+                        <label class="deleteBlog">&#10008;</label>
+                    </tr>
+                    <td class="size">{{ blog.text }}</td>
+                    <tr>
+                        <td class="data">{{ blog.data | date:'dd/MM/yyyy' }}</td>
+                    </tr>
+                </tbody>
+            </div>
+        </table>
+    </form>
+</div>
